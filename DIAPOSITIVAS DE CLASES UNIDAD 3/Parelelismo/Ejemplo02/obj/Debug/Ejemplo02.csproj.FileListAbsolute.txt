@@ -1,0 +1,7 @@
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\bin\Debug\Ejemplo02.exe.config
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\bin\Debug\Ejemplo02.exe
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\bin\Debug\Ejemplo02.pdb
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\obj\Debug\Ejemplo02.csprojAssemblyReference.cache
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\obj\Debug\Ejemplo02.csproj.CoreCompileInputs.cache
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\obj\Debug\Ejemplo02.exe
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo02\obj\Debug\Ejemplo02.pdb

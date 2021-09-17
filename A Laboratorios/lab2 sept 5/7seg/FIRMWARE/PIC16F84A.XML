@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<PROJECT IID="1" BUILDPATH="C:/Users/Alex/AppData/Local/Temp/VSM Studio/7f6951215a694b5da408144d208360bf/PIC16F84A" VERSION="817" TYPE="SOURCE" NAME="PIC16F84A" CONFIGURATION="Debug">
+ <FILES ATTACH="1">
+  <FILE ATTACH="1" GROUP="Source Files" NAME="PIC16F84A/main.c"/>
+  <FILE ATTACH="1" GROUP="Firmware Files" NAME="PIC16F84A/Debug/Debug.cof" FIRMWARE="1"/>
+ </FILES>
+ <CONFIGURATION CRC="d75abc15d7d93a2d036cda4897b80117" TARGET="Debug" COMPILER="MPLAB XC8" NAME="Debug">
+  <CONTROLLER FAMILY="PIC16" TYPE="PIC16F84A"/>
+  <FILE TOOL="LD" NAME="PIC16F84A/Debug/Debug.cof">
+   <FILE TOOL="CC" NAME="PIC16F84A/Debug/main.p1">
+    <FILE NAME="PIC16F84A/main.c"/>
+   </FILE>
+  </FILE>
+  <OPTION DEFAULT="1" TOOL="LD" NAME="--output=" VALUE="mcof"/>
+  <OPTION DEFAULT="1" TOOL="LD" NAME="-G"/>
+  <OPTION DEFAULT="1" TOOL="LD" NAME="--chip=" VALUE="16F84A"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--pass1"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--errformat=" VALUE="&quot;Error at file %%%%f line %%%%l column %%%%c: (%%%%n) %%%%s&quot;"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--warnformat=" VALUE="&quot;Warning at file %%%%f line %%%%l column %%%%c: (%%%%n) %%%%s&quot;"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--msgformat=" VALUE="&quot;Message at file %%%%f line %%%%l column %%%%c: (%%%%n) %%%%s&quot;"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="-G"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--chip=" VALUE="16F84A"/>
+ </CONFIGURATION>
+ <CONFIGURATION CRC="d75abc15d7d93a2d036cda4897b80117" TARGET="Release" COMPILER="MPLAB XC8" NAME="Release">
+  <CONTROLLER FAMILY="PIC16" TYPE="PIC16F84A"/>
+  <FILE TOOL="LD">
+   <FILE TOOL="CC">
+    <FILE NAME="PIC16F84A/main.c"/>
+   </FILE>
+  </FILE>
+  <OPTION DEFAULT="1" TOOL="LD" NAME="--output=" VALUE="intel"/>
+  <OPTION DEFAULT="1" TOOL="LD" NAME="--chip=" VALUE="16F84A"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--pass1"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--errformat=" VALUE="&quot;Error at file %%%%f line %%%%l column %%%%c: (%%%%n) %%%%s&quot;"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--warnformat=" VALUE="&quot;Warning at file %%%%f line %%%%l column %%%%c: (%%%%n) %%%%s&quot;"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--msgformat=" VALUE="&quot;Message at file %%%%f line %%%%l column %%%%c: (%%%%n) %%%%s&quot;"/>
+  <OPTION DEFAULT="1" TOOL="CC" NAME="--chip=" VALUE="16F84A"/>
+ </CONFIGURATION>
+</PROJECT>

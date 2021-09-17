@@ -1,0 +1,120 @@
+#define _XTAL_FREQ 4000000
+ 
+#define RS RB0
+#define EN RB1
+#define D4 RB2
+#define D5 RB3
+#define D6 RB4
+#define D7 RB5
+
+#include <xc.h>
+#include "lcd.h"
+
+
+//DEFINIMOS LA FUNCION DELAY
+//definimos la frecuencia del crystal de quarzo
+#define FRECUENCIA 4000000L
+//definimos la funcion que se utilizara para crear el delay
+#define delay_us(x){unsigned int us; us = (x) / (12000000/FRECUENCIA) | 1; while(--us !=0) continue; }
+/////////////////////////////////////////////////////////
+
+void generarnumero(int numero,int fila,int posicion){
+   int segundonumero=0,tercernumero=0;
+   if(numero<0)
+   {
+      Lcd_Set_Cursor(fila,posicion);
+      Lcd_Write_Char(45);
+      posicion++;
+      numero = numero*-1;
+   }
+      int segundonumero = (numero/10);
+      int tercernumero = numero-(segundonumero*10);
+      Lcd_Set_Cursor(fila,posicion);
+      Lcd_Write_Char(48+segundonumero);
+      Lcd_Set_Cursor(fila,posicion+1);
+      Lcd_Write_Char(48+tercernumero);
+      __delay_ms(50);
+}
+void operacion(int num1,int op,int num2){
+   Lcd_Set_Cursor(1,6);
+   Lcd_Write_Char(61);			//=
+   switch(op){
+      case 0:
+	 generarnumero(num1+num2,1,7);
+	 break;
+      case 1:
+	 generarnumero(num1-num2,1,7);
+	 break;
+      case 2:
+	 generarnumero(num1*num2,1,7);
+	 break;
+   }
+   __delay_ms(60);
+}
+void operador(int signo){
+   int s;
+   switch(signo){
+     case 0:
+	 s=43;
+	 break;
+      case 1:
+	 s=45;
+	 break;
+      case 2:
+	 s=42;
+	 break;
+   }
+   Lcd_Set_Cursor(1,3);
+   Lcd_Write_Char(s);
+   __delay_ms(60);
+}
+void main(void)
+ {
+   // Write your code here
+    int numeros[4]={0,-1,0};
+    TRISA = 1;
+    TRISB = 0;
+    PORTA = 0;
+    Lcd_Init();
+    Lcd_Clear();
+   while (1){
+      if(PORTAbits.RA0)
+      {
+	 numeros[0]=numeros[0]+1;
+	 generarnumero(numeros[0],1,1);
+      }
+      
+      if(PORTAbits.RA1)
+      {
+	 numeros[1]=numeros[1]+1;
+	 if(numeros[1]>3)
+	 {
+	    numeros[1]=0;
+	 }
+	 operador(numeros[1]);
+	 
+      }
+	 
+      if(PORTAbits.RA2)
+      {
+	 numeros[2]=numeros[2]+1;
+	 generarnumero(numeros[2],1,4);
+      }
+	 
+      if(PORTAbits.RA3)
+      {
+	 operacion(numeros[0],numeros[1],numeros[2]);
+      }
+      
+      if(PORTAbits.RA4)
+      {
+	 Lcd_Init();
+	 Lcd_Clear();
+	 numeros[0]=0;
+	 numeros[1]=0;
+	 numeros[2]=0;
+	 __delay_ms(80);
+	 }
+	 __delay_ms(20);
+      };
+ }

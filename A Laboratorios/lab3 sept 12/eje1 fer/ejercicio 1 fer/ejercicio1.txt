@@ -1,0 +1,79 @@
+//DEFINIMOS LA FRECUNCIA
+//==================================================
+#define _XTAL_FREQ 4000000
+//DEFINIMOS LOS PUERTOS
+//==================================================
+#define RS RB0
+#define EN RB1
+#define D4 RB2
+#define D5 RB3
+#define D6 RB4
+#define D7 RB5
+//==================================================
+#include <xc.h>
+#include "lcd.h";
+//Definicion de prototipos de funciones
+unsigned int carrera();
+
+void generarnumero(int cantidad){
+   if(cantidad<10){
+      Lcd_Set_Cursor(1,14);
+      Lcd_Write_Char(48+cantidad);
+   }else{
+      int segundonumero = (cantidad/10);			//para que vuelva a comenzar en el uno
+      int tercernumero = cantidad-(segundonumero*10);			//para que permita que el numero llegue al 99
+      Lcd_Set_Cursor(1,14);					//que comience en la fila 1, posicion 14
+      Lcd_Write_Char(48+segundonumero);				//que comience desde 1 codigo Ascii
+      Lcd_Set_Cursor(1,15);
+      Lcd_Write_Char(48+tercernumero);
+   }
+}
+
+void main(void)
+ {
+    //CONFIGURAMOS LOS PUERTOS 
+    //---------------------------------------------------------------------
+    TRISA = 1;		//Configuramos el puerto como entrada
+    TRISB = 0;		//Configuramos el puerto como salida
+    PORTA = 0;		//Inicializamos el puerto
+    Lcd_Init();
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("Presiona boton!!");
+    __delay_ms(280);
+    int cantidad[3]={0,0,0};
+    //---------------------------------------------------------------------
+   while (1){
+     if(PORTAbits.RA0){
+		 Lcd_Init();
+		 Lcd_Clear();
+		 cantidad[0]=cantidad[0]+1;		//para que vaya acumulando cada vez que presione el boton
+		 Lcd_Set_Cursor(1,1);
+		 Lcd_Write_String("PUERTOA-PINO:");
+		 Lcd_Set_Cursor(1,14);
+		 generarnumero(cantidad[0]);
+		 __delay_ms(100);
+		}
+	   if(PORTAbits.RA1){
+		 Lcd_Init();					//inicializar la pantalla
+		 Lcd_Clear();					//limpia pantalla
+		 cantidad[1]=cantidad[1]+1;
+		 Lcd_Set_Cursor(1,1);
+		 Lcd_Write_String("PUERTOA-PIN1:");
+		 Lcd_Set_Cursor(1,14);
+		 generarnumero(cantidad[1]);
+		 __delay_ms(100);
+		  }  
+		if(PORTAbits.RA2){
+		 Lcd_Init();
+		 Lcd_Clear();
+		 cantidad[2]=cantidad[2]+1;
+		 Lcd_Set_Cursor(1,1);
+		 Lcd_Write_String("PUERTOA-PIN2:");
+		 Lcd_Set_Cursor(1,14);
+		 generarnumero(cantidad[2]);
+		 __delay_ms(100);   
+		  } 
+    //---------------------------------------------------------------------
+   };
+ }

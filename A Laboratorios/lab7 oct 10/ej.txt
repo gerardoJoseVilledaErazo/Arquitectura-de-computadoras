@@ -1,0 +1,67 @@
+#include <xc.h>
+#define _XTAL_FREQ 1000000
+	
+int proceso = 0;
+void girarmotor(int pulsos);
+void main(void)
+ {
+	int pulsos = 0;
+    	TRISB = 0;	//Configuramos el puerto A como salida
+    	TRISA = 1;	//Configuramos el puerto B como entrada
+	PORTA = 0;	//Inicializamos los pines del puertoA
+	PORTB = 0;	//Inicializamos los pines del puertoB
+	while(1){
+		if(PORTAbits.RA0){
+			proceso = 1;
+			if(pulsos==3){
+				pulsos = 1;
+			}else{
+				pulsos += 1;
+			}
+			__delay_ms(500);
+		}
+		girarmotor(pulsos);
+	};
+}
+void girarmotor(int pulsos){
+	if(proceso == 1){
+		switch(pulsos){
+			case 1://POSICIONAMOS EL MOTOR SERVO A 90
+			{
+				//Realizamos pulsos de 2ms
+				for(int i = 0; i < 16; i++){
+					PORTBbits.RB0=1;
+					__delay_ms(1.5);
+					PORTBbits.RB0=0;
+					__delay_ms(20);
+				}
+				proceso=0;
+			}
+			break;
+			case 2://POSICIONAMOS EL MOTOR SERVO A 180
+			{
+				//Realizamos 16 pulsos de 4ms
+				for(int i = 0; i < 16; i++){
+					PORTBbits.RB0=1;
+					__delay_ms(2);
+					PORTBbits.RB0=0;
+					__delay_ms(20);
+				}
+				proceso=0;
+			}
+			break;
+			case 3://POSICIONAMOS EL MOTOR SERVO A 180
+			{
+				//Realizamos 16 pulsos de 4ms
+				for(int i = 0; i < 16; i++){
+					PORTBbits.RB0=1;
+					__delay_ms(0.6);
+					PORTBbits.RB0=0;
+					__delay_ms(20);
+				}
+				proceso=0;
+			}
+			break;
+		}
+	}
+}

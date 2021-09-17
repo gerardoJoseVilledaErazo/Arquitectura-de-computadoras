@@ -1,0 +1,13 @@
+Los Ciclos de Captación y Ejecución
+
+Al comienzo de cada ciclo de instrucción, la CPU  capta una instrucción de memoria. En una CPU típica, 
+se utiliza un registro llamado contador de programa (PC, Program Counter) para seguir los flujos de la 
+instrucción que debe ejecutar a continuación
+
+
+Simulador Von Neuman
+
+javier gamez
+
+https://www.youtube.com/watch?v=SBX9pma_e-g
+

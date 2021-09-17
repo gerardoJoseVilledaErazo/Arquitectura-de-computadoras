@@ -1,0 +1,57 @@
+#include <xc.h>
+#define _XTAL_FREQ 4000000
+
+void main(void)
+ {
+   // Configuramos los puertos
+    int encendido = 0;
+    TRISA = 1;		//Configuramos el puerto A como entrada
+    TRISB = 0;		//Configuramos el puerto B como salida
+    PORTA = 0;		//Inicializamos los pines del puerto
+    PORTB = 0;		//Inicializamos los pines del puerto	
+   while (1){
+       //Determinamos si se presiono el boton de encendido
+      //GIRO ANTI HORARIO (IZQUIERDA)
+       if(PORTAbits.RA0){
+	  if(encendido ==0){
+	     //Encendido el motor
+	     encendido = 1;
+	     __delay_ms(100);
+	     }else{
+		//Apagamos el moto
+		encendido = 0;
+		__delay_ms(100);
+	     }
+       }
+       //GIRO HORARIO(DERECHA)
+       if(PORTAbits.RA1){
+	  if(encendido ==0){
+	     //Encendido el motor
+	     encendido = 1;
+	     __delay_ms(100);
+	     }else{
+		//Apagamos el moto
+		encendido = 0;
+		__delay_ms(100);
+	     }
+       }
+      //Validamos si se encuentra encendido el motor
+      if(PORTAbits.RA0){
+       if(encendido == 1){
+	 //Establecemos el PIN0 del puerto B en H = 5 Volts.
+	 PORTB =0b00000001;
+      }else if(encendido == 0){
+	 //Establecemos el PIN0 del puerto B en H = 0 Volts.
+	 PORTB = 0b00000000;
+	 }
+      }else if(PORTAbits.RA1){
+	 if(encendido == 1){
+	 //Establecemos el PIN0 del puerto B en H = 5 Volts.
+	 PORTB =0b00001000;
+      }else if(encendido == 0){
+	 //Establecemos el PIN0 del puerto B en H = 0 Volts.
+	 PORTB = 0b00000000;
+	 }
+      }
+    };
+ }

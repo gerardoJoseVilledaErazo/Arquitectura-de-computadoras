@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<FIRMWARE FAMILY="PIC16" COMPILER="MPLAB XC8" TYPE="PIC16F84A">
+ <PROJECTS>
+  <STRING>PIC16F84A</STRING>
+ </PROJECTS>
+</FIRMWARE>

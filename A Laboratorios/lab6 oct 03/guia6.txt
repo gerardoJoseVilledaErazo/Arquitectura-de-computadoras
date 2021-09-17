@@ -1,0 +1,35 @@
+#include <xc.h>
+//DEFINIMOS LA FRECUENCIA
+#define _XTAL_FREQ 4000000
+
+void main(void)
+ {
+   // ESTABLECEMOS LA CONFIGURACION y Establecemos los puertos que seran entrada y salida
+	int encendido=0;
+    	TRISB = 0;	//Configuramos el puerto A como salida
+    	TRISA = 1;	//Configuramos el puerto B como entrada
+	PORTA = 0;	//Inicializamos los pines del puertoA
+	PORTB = 0;	//Inicializamos los pines del puertoB
+	while(1){
+		//Determinamos si se presiono el boton de encendido
+		if(PORTAbits.RA0){
+			if(encendido==0){
+				//Encendemos el motor
+				encendido=1;
+				__delay_ms(100);
+			}else{
+				//Apagamos el motor
+				encendido=0;
+				__delay_ms(100);
+			}
+		}
+		//validamos si se encuentra encendido el motor
+		if(encendido==1){
+			//Establecemos el PIN0 DEL PUERTO B EN H=5 VOLTS.
+			PORTB = 0b00000001;
+		}else if(encendido==0){
+			//Establecemos el PIN0 DEL PUERTO B EN H=0 VOLTS.
+			PORTB = 0b00000000;
+		}
+	};
+}

@@ -1,0 +1,3 @@
+Técnicas básicas de implementación de procesadores
+La arquitectura da la forma a un edificio, pero la carpintería determina la calidad de su construcción. La carpintería de la computación 
+es la implementación, que es responsable de unos de los componentes de rendimiento:

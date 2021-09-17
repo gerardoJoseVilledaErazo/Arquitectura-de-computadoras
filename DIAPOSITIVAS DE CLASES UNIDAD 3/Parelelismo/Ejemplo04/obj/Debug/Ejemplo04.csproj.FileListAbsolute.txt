@@ -1,0 +1,10 @@
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\bin\Debug\Ejemplo04.exe.config
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\bin\Debug\Ejemplo04.exe
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\bin\Debug\Ejemplo04.pdb
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.csprojAssemblyReference.cache
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.Form1.resources
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.Properties.Resources.resources
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.csproj.GenerateResource.cache
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.csproj.CoreCompileInputs.cache
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.exe
+D:\DESARROLLO\C#\USO\2020\Parelelismo\Ejemplo04\obj\Debug\Ejemplo04.pdb

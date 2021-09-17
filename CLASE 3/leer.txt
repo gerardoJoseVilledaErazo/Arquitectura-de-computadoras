@@ -1,0 +1,3 @@
+Generalidades del Funcionamiento de una Computadora
+
+Virtualmente las computadoras actuales se han diseñado basándose en los conceptos que desarrollo John Von Neumann

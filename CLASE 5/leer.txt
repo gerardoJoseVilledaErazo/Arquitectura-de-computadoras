@@ -1,0 +1,3 @@
+Principio de Diseño de Repertorio de Instrucciones
+Realizaremos una breve introducción a las arquitecturas a nivel lenguaje maquina, 
+la parte de la maquina visible al programador en cual esta compuesta por los Repertorios de Instrucciones

@@ -1,0 +1,3 @@
+clase 10
+Mantenimiento de Computadoras
+Cuando se habla de mantenimiento a una computadora, se refiere a las medidas y acciones que se toman para mantenerla funcionando adecuadamente, sin que se cuelgue (trabe) o emita mensajes de errores con frecuencia.

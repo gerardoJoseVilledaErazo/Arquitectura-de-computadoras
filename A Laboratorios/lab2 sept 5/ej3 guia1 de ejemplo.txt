@@ -1,0 +1,41 @@
+ejercicio 3 guia 1
+
+#include <xc.h>
+void main(void)
+ {
+    //Establecemos los puertos que seran entrada y salida
+    TRISA = 1;						
+    PORTA = 0;	
+    
+    TRISB = 0;						
+    PORTB = 0;	
+    
+   
+   while (1){
+      //PIN0
+      if(PORTAbits.RA0){
+	 PORTBbits.RB0 = 0b00001;
+      }else{
+	 PORTBbits.RB0 = 0b00000;
+      }
+      //PIN1
+      if(PORTAbits.RA1){
+	 PORTBbits.RB1 = 0b00001;
+      }else{
+	 PORTBbits.RB1 = 0b00000;
+      }
+      //PIN2
+      if(PORTAbits.RA2){
+	 PORTBbits.RB2 = 0b00001;
+      }else{
+	 PORTBbits.RB2 = 0b00000;
+      }
+      //PIN3
+      if(PORTAbits.RA3){
+	 PORTBbits.RB3 = 0b00001;
+      }else{
+	 PORTBbits.RB3 = 0b00000;
+      }
+      
+   };
+ }}

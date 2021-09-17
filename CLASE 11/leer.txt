@@ -1,0 +1,3 @@
+Memoria Cache
+
+Las memorias de las computadoras, aunque parezcan conceptualmente sencillas, presentan tal vez la más amplia diversidad de tipos, tecnología, estructura, prestaciones y coste, de entre todos los componentes de un computador.

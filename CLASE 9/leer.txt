@@ -1,0 +1,4 @@
+clase 9
+Buses II
+
+En un sistema de computadores, los diversos subsistemas deben tener interfaces entre sí; por ejemplo, la memoria y la CPU necesitan comunicarse, así como la CPU y los dispositivos de E/S.

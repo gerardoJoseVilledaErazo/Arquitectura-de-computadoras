@@ -1,0 +1,4 @@
+Direccionamiento de memoria
+
+Independientemente que una arquitectura sea registro-registro (también llamada de carga/almacenamiento) o permita que cualquier operando sea 
+una referencia a memoria, debe definir cuántas direcciones de memoria son interpretadas y cómo se especifican.
